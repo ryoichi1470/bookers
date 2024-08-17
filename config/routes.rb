@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'homes/top', to: 'homes#top'
-  root 'books#index'
+  root 'homes#top'
   resources :books
 end 
 

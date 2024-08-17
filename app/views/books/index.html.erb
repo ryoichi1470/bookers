@@ -23,7 +23,7 @@
         <%= link_to 'Edit', edit_book_path(book) %>
       </td>
       <td>
-        <a class="destroy"href="">Destroy</a>
+        <%= link_to 'Destroy', book_path(book.id), method: :delete, data: { confirm: '削除しますか?' } %>
       </td>
     </tr>
   </body>

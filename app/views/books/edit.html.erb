@@ -9,4 +9,12 @@
   
   <%= book.submit 'Update Book' %>
   
-<% end %>
+ <% end %>
+ 
+ <span>
+     <%= link_to 'Show', book_path(@book) %>
+ </span>
+
+<span>
+    <%= link_to "Back", "/books/" %>
+</span>
