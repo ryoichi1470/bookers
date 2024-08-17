@@ -1,13 +1,32 @@
 <h1>Books</h1>
 
-<% @books.each do |book| %>
-
-  <p>title</p>
-  <span>
-     <%= link_to book.title, book_path(book.id) %>
-  </span>
-  
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <% @books.each do |book| %>
+  <body>
+    <tr>
+      <td>
+        <span><%= book.title %></span>
+      </td>
+      <td>
+        <span><%= book.body %></span>
+      </td>
+      <td>
+        <a class="show_id"href="show/:id">show</a>
+      </td>
+      <td>
+        <a class="edit:id"href="books/:id/edit">Edit</a>
+      </td>
+      <td></td>
+    </tr>
+  </body>
+  <% end %>
+</table>
 
 <h1>New Book</h1>
 <%= form_with model: @book do |f| %>
