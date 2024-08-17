@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @new = Book.new
+    @book = Book.new
   end
 
   def create
@@ -11,6 +12,8 @@ class BooksController < ApplicationController
        flash[:notice] = "Book was successfully created."
        redirect_to @book
     else
+      @books = Book.all
+      @new = Book.new
       render :index
     end 
   end
