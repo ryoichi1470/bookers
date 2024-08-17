@@ -17,19 +17,21 @@
         <span><%= book.body %></span>
       </td>
       <td>
-        <a class="show_id"href="show/:id">show</a>
+        <%= link_to 'Show', book_path(book) %>
       </td>
       <td>
-        <a class="edit:id"href="books/:id/edit">Edit</a>
+        <%= link_to 'Edit', edit_book_path(book) %>
       </td>
-      <td></td>
+      <td>
+        <a class="destroy"href="">Destroy</a>
+      </td>
     </tr>
   </body>
   <% end %>
 </table>
 
 <h1>New Book</h1>
-<%= form_with model: @book do |f| %>
+<%= form_with model: @new do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   
